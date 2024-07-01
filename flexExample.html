@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        
+        #container {
+            display: flex;
+            flex-direction: row;
+            background-color: #fffc00;
+        }
+
+        #container ul {
+            width: 32%;
+        }
+
+        #container #img1 {
+            width: 32%;
+            text-align: right;
+        }
+
+        #container h1 {
+            width: 32%;
+
+        }
+
+        footer {
+            display: flex;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: red;
+            color: black;
+            text-align: center;
+        }
+
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 50px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+        .fa-pinterest {
+            background: #cb2027;
+            color: white;
+        }
+
+        .fa-snapchat-ghost {
+            background: #fffc00;
+            color: white;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        }
+
+        footer ul {
+            width: 32%;
+            text-align: left;
+
+        }
+
+        footer #img2 {
+            width: 32%;
+            text-align: right;
+        }
+
+        footer h1 {
+            width: 32%;
+        }
+
+        #main {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+        }
+
+        #main #colonna1 {
+            width: 32%;
+            background-color: #55ACEE;
+        }
+
+        #main #colonna2 {
+            width: 64%;
+            background-color: rebeccapurple;
+           
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <ul>
+            Menu:
+            <li>Margherita</li>
+            <li>Sarda</li>
+            <li>Canadese</li>
+        </ul>
+
+        <h1>Pizzeria Pi</h1>
+        <p id="img1"><img src="pizza.avif" height="100px"></p>
+    </div>
+
+    <div id="main">
+        <p id="colonna1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam suscipit alias iste molestiae,
+            vitae ad quam facere cumque quas est reiciendis in assumenda harum optio corporis beatae aspernatur maiores
+            nam?</p>
+        <p id="colonna2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, impedit optio vitae error
+            magnam velit blanditiis? Error, explicabo. Cumque, atque repellat? Quisquam neque laboriosam quod veritatis
+            voluptatem ex, adipisci ratione.
+        </p>
+    </div>
+
+    <footer>
+
+        <ul>Contatti:
+            <li>pizzeriaPi@gmail,.com</li>
+            <li>3453423948239</li>
+            <li>07976886</li>
+        </ul>
+
+        <h1>Grazie</h1>
+        <p id="img2"><a href="#" class="fa fa-pinterest"></a>
+            <a href="#" class="fa fa-snapchat-ghost"></a>
+        </p>
+    </footer>
+</body>
+
+</html>
