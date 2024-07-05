@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura</title>
+
+    <style>
+        img {
+            display: none;
+        }
+    </style>
+
+    <script>
+        window.onload = gestoreLoad;
+
+        function gestoreLoad() {
+
+            let btnInserisci = document.getElementById("btnInserisci");
+            let btnMostra = document.getElementById("btnMostra");
+            let btnMedia = document.getElementById("btnMedia");
+
+            btnInserisci.onclick = add;
+            btnMostra.onclick = mostra;
+            btnMedia.onclick = media;
+
+            let listaTemp = [];
+
+            function remove() {
+                var nodo = document.getElementById("result1");
+                while (nodo.firstChild) {
+                    nodo.removeChild(nodo.firstChild);
+                }
+            }
+            function add() {
+                let temp = document.getElementById("num").value;
+                listaTemp.push(parseInt(temp));
+            }
+
+            function mostra() {
+                remove();
+                let nodo = document.getElementById("result1");
+                for (let i = 0; i < listaTemp.length; i++) {
+                    let nuovoNodo = document.createElement("li");
+                    nuovoNodo.textContent = listaTemp[i];
+                    nodo.appendChild(nuovoNodo);
+                }
+            }
+
+            function media() {
+                let somma = 0;
+                for (let i = 0; i < listaTemp.length; i++) {
+                    somma = somma + listaTemp[i];
+                }
+                let media = somma / listaTemp.length;
+                let nodo = document.getElementById("result");
+               // nodo.textContent = "la media delle temperature è: " + media;
+
+                /*
+                Opzionale: 
+                se la media delle temperature è meno di 15 gradi il programma stampa la media e un'immagine invernale, 
+                se la temperatura e tra quindici e 28 gradi stampa un'immagine primaverile 
+                se e oltre i 28 gradi stampa un’immagine estiva
+                */
+
+                if (media < 15) {
+                    document.getElementById("inverno").style.display = "block";
+                    document.getElementById("estate").style.display = "none";
+                    document.getElementById("primavera").style.display = "none";
+                    document.getElementById("autunno").style.display = "none";
+
+                    let nodo = document.getElementById("result3");
+                    nodo.textContent = "la media delle temperature è: " + media;
+
+                } else if (media >= 15 && media <= 28) {
+                    document.getElementById("inverno").style.display = "none";
+                    document.getElementById("estate").style.display = "none";
+                    document.getElementById("primavera").style.display = "block";
+                    document.getElementById("autunno").style.display = "none";
+
+                    let nodo = document.getElementById("result3");
+                    nodo.textContent = "la media delle temperature è: " + media;
+                } else if (media > 28) {
+                    document.getElementById("inverno").style.display = "none";
+                    document.getElementById("estate").style.display = "block";
+                    document.getElementById("primavera").style.display = "none";
+                    document.getElementById("autunno").style.display = "none";
+
+                    let nodo = document.getElementById("result3");
+                    nodo.textContent = "la media delle temperature è: " + media;
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <h1>Registro temperature climatiche</h1>
+    <!--
+Creare una pagina web che rappresenta il registro di temperature climatiche.
+Il programma permette di inserire una nuova temperatura,
+di mostrare tutte le temperature inserite, di calcolare la media delle temperature.
+Lo script prevede la creazione di un array dove vengono 
+inserite le temperature e dal quale viene calcolata la media.
+-->
+
+    Inserisci temperatura: <input type="number" id="num"><br><br>
+    <button id="btnInserisci">Inserisci nuova temperatura</button>
+    <hr>
+    <hr>
+    <button id="btnMostra">Mostra tutte le temperature</button>
+    <ul id="result1"></ul>
+    <hr>
+    <hr>
+    <button id="btnMedia">Calcola la media</button>
+    <ul id="result"></ul>
+
+    <hr>
+    <hr>
+    <div id="resultImg">
+        <img src="invierno.jpeg" id="inverno">
+        <img src="verano.jpeg" id="estate">
+        <img src="primavera.jpeg" id="primavera">
+        <img src="otoNo.jpeg" id="autunno">
+        <div id="result3"></div>
+    </div>
+</body>
+</html>
